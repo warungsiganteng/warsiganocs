@@ -1,0 +1,84 @@
+<div id="wrapper">
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/home"><img src="/images/w-logo-small2.png" style="margin-top:-8px;margin-right:5px;width:35px;height:35px"></img> Warung Si Ganteng</a>
+        </div>
+
+<div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- User Account Menu -->
+                <li class="dropdown user user-menu">
+                    <!-- Menu Toggle Button -->
+                    <a href="#" class="dropdown-toggle custom-menu" data-toggle="dropdown" aria-expanded="false">
+                        <!-- The user image in the navbar-->
+                        <img src="/images/avatar5.png" class="user-image" alt="User Image">
+                        <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                        <span class="hidden-xs">Hello, {{ @me->username }}</span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- The user image in the menu -->
+                        <li class="user-header">
+                            <span class="img-circle"><img src="/images/avatar5.png" alt="User Image"></span>
+
+                            <p>
+                                {{ @me->username }}
+                            </p>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="/home/setting" class="label label-success">Dashboard</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="/logout" class="label label-danger">Sign out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="/home/setting"><i class="fa fa-laptop"></i>  Dashboard</a>
+                    </li>
+                    <check if="{{ @me->type==1 }}">
+                        <true>
+                            <li>
+                                <a href="/home/admin/server"><i class="fa fa-th-list fa-fw"></i>  Server</a>
+                            </li>
+                            <li>
+                                <a href="/home/admin/seller"><i class="fa fa-group fa-fw"></i>  Seller</a>
+                            </li>
+                        </true>
+                        <false>
+                            <li>
+                                <a href="/home/member/server"><i class="fa fa-shopping-cart fa-fw"></i>  Order</a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/mr.azue" target="_blank"><i class="fa fa-coffee"></i>  Contact</a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/groups/278984692544780/" target="_blank"><i class="fa fa-facebook-square"></i>  Group</a>
+                            </li>
+                        </false>
+                    </check>
+
+                    <li>
+                        <a href="/logout"><i class="fa fa-sign-out fa-fw"></i>  Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <include href="{{ @subcontent }}"/>
+</div>

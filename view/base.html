@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Warung SSH & VPN">
+    <meta name="author" content="Dey Agustian">
+    <meta content='Warung Si Ganteng' property='og:site_name'/>
+    <meta content='Warung Si Ganteng' property='og:title'>
+    <meta content='website' property='og:type'>
+    <meta content='Warung Si Ganteng - SSH dan VPN Premium' property='og:description'>
+    <meta content='/images/wkp.png' property='og:image'>
+    <meta content='100000563940318' property='fb:admins'>
+    <meta content='100000563940318' property='fb:profile_id'>
+    <meta content='Warung Si Ganteng' name='twitter:site'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@deyagustian' name='twitter:creator'>
+    <link href='/images/wkp.ico' rel='icon' type='image/x-icon'>
+    <title>Warung Si Ganteng</title>
+    <link rel="stylesheet" href="/asset/css/bootstrap-dark-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.0.0/metisMenu.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="/asset/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/asset/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+    <link href="/asset/css/bootstrap-dialog.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <include href="{{ @content}} "/>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.0.0/metisMenu.min.js"></script>
+    <script src="/asset/js/sb-admin-2.js"></script>
+    <script src="/asset/js/bootstrap-datepicker.min.js"></script>
+    <script src="/asset/js/bootstrap-dialog.min.js"></script>
+    <script type="text/javascript">
+        $('.input-group.date').datepicker({
+            format: "yyyy/mm/dd",
+            weekStart: 1,
+            clearBtn: true,
+            language: "id",
+            autoclose: true,
+            todayHighlight: true
+        });
+        $('.hapus').click(function(e) {
+            e.preventDefault();
+            BootstrapDialog.confirm({
+                title: 'Confirm',
+                message: ' Yakin Gan ?',
+                type: BootstrapDialog.TYPE_DANGER,
+                closable: true,
+                btnCancelLabel: 'Batal',
+                btnOKLabel: 'Delete',
+                btnOKClass: 'btn-danger',
+                callback: function(result) {
+                    if(result) {
+                        location.href = $('.hapus').attr('href');
+                    }
+                }
+            });
+        });
+        function print_report() {
+            window.print();
+            return false;
+        }
+    </script>
+<script type="text/javascript">
+$('.showup').click(function() {
+    $('#target').toggle(500);
+});
+</script>
+<script type="text/javascript">
+$('.showup2').click(function() {
+    $('#target2').toggle(500);
+});
+</script>
+<script type="text/javascript">
+$('.showup3').click(function() {
+    $('#target3').toggle(500);
+});
+</script>
+</body>
+</html>
